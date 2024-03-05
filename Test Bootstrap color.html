@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The IT Guy</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000000; /* Background color changed to black */
+        }
+        .custom-container {
+            padding: 20px;
+            background-color: #000000; /* Matching the body background color */
+        }
+        h1, h2, p { /* Added 'p' to the existing rule for h1 and h2 */
+            color: #ffffff; /* Text color changed to white for visibility */
+        }
+        .custom-button {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .custom-button:hover {
+            background-color: #0056b3;
+        }
+        .logo {
+            display: block;
+            margin: 0 auto 20px; /* Center the logo and add some margin below */
+            max-width: 40%; /* Ensure the logo is responsive */
+            height: auto; /* Maintain aspect ratio */
+        }
+    </style>
+</head>
+<body>
+    <div class="container custom-container">
+        <img src="logo.png" alt="The IT Guy Logo" class="logo"> <!-- Logo added here -->
+        <h1>The IT Guy</h1>
+        <h2>Making Technology Work For You</h2>
+        <p>Welcome to The IT Guy – your ultimate partner for comprehensive IT solutions. Specializing in on-demand support, cybersecurity, cloud services, and more, we empower businesses and individuals to navigate the digital world with ease. Experience seamless tech operations and unlock your full potential with our expert team by your side. Connect with us today to take the first step towards hassle-free technology management!</p>
+        <button id="supportBtn" class="btn btn-primary custom-button">Get Support Now!</button>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const supportBtn = document.getElementById("supportBtn");
+            supportBtn.addEventListener("click", function() {
+                const recipient = "support@calltheitguy.net";
+                const body = encodeURIComponent("Name: \n\nPhone Number: \n\nCompany (Optional): \n\nReason for contact: \n\n");
+                window.location.href = `mailto:${recipient}?subject=Support Request&body=${body}`;
+            });
+        });
+    </script>
+</body>
+</html>
